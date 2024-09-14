@@ -1,0 +1,41 @@
+import { Box, Typography } from "@mui/material";
+import { NodeData } from "../models/Node";
+import Image from "next/image";
+import { borderColour, textBlack } from "../../_shared/styles/colors";
+import { Handle, Position } from "reactflow";
+
+interface ICategoryNodeProps {
+    data: NodeData
+}
+
+export default function CategoryNode(props: ICategoryNodeProps) {
+    const { imageSource, nodeLabel, dialogTitle } = props.data
+
+    return (
+        <Box sx={nodeContainerStyle}>
+            <Image src={getImageSrc(imageSource)} alt={nodeLabel} height="64" width="64" />
+            <Typography sx={textStyle}>
+                {dialogTitle}
+            </Typography>
+            { /* Future dialog goes here */ }
+            <Handle type="target" position={Position.Left} />
+            <Handle type="source" position={Position.Right} />
+        </Box>
+    )
+}
+
+function getImageSrc(name: string) {
+    return `/shared/temp-images/${name}`
+}
+
+const nodeContainerStyle = {
+    padding: "8px",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    border: `1px solid ${borderColour}`
+}
+
+const textStyle = {
+    color: textBlack
+}
