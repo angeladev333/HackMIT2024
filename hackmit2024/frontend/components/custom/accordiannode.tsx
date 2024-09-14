@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import React from "react";
 
-interface AccordionNodeProps {
+export interface AccordionNodeProps {
   title: string;
   position: { x: number; y: number };
   setStackAction: any;
