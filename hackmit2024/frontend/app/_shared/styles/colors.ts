@@ -1,0 +1,1 @@
+export const textBlack = "#282931"
