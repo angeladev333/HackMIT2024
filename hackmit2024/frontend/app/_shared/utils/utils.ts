@@ -1,1 +1,7 @@
-// file to add utils functions that multiple files will need
+export function GenerateNodes() {
+
+}
+
+export function GenerateEdges() {
+
+}

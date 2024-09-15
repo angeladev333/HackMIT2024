@@ -15,10 +15,10 @@ import (
 
 	"encoding/json" //convert stringJSOn to json
 
+	"bytes"
 	"encoding/base64"
 	"image/png"
 	"os"
-	"bytes"
 )
 
 type Section struct {
@@ -94,10 +94,10 @@ func GPTImage(input string) string {
 		fmt.Printf("PNG decode error: %v\n", err)
 	}
 
-	//defint the name of the image 
+	//defint the name of the image
 	name := uuid.New().String() + ".png"
 	file, err := os.Create(name)
-	
+
 	if err != nil {
 		fmt.Printf("File creation error: %v\n", err)
 	}
@@ -140,10 +140,10 @@ func GPTImage(input string) string {
 // 		fmt.Printf("PNG decode error: %v\n", err)
 // 	}
 
-// 	//defint the name of the image 
+// 	//defint the name of the image
 // 	name := uuid.New().String() + ".png"
 // 	file, err := os.Create(name)
-	
+
 // 	if err != nil {
 // 		fmt.Printf("File creation error: %v\n", err)
 // 	}
@@ -240,8 +240,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	content14 := GPTResponse(prePrompt2, question, header1[3])
 	sections[8] = createSection(idArray[8], header1[3], content14, "", []string{})
 
-
-
 	headerString2 := GPTResponse(prePrompt1, header[1], "") //get 4 subsubsection of *subsection 1*
 	header2 := stringjsonToArray(headerString2)
 
@@ -261,8 +259,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	content24 := GPTResponse(prePrompt2, question, header2[3])
 	sections[12] = createSection(idArray[12], header2[3], content24, "", []string{})
 
-
-
 	headerString3 := GPTResponse(prePrompt1, header[2], "") //get 4 subsubsection of *subsection 3*
 	header3 := stringjsonToArray(headerString3)
 
@@ -281,7 +277,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	//node 3.4
 	content34 := GPTResponse(prePrompt2, question, header3[3])
 	sections[16] = createSection(idArray[16], header3[3], content34, "", []string{})
-
 
 	//content&1&*1* := GPTResponse(prePrompt2, question, header&1&[*0*])
 	//sections[*5*] = createSection(idArray[*5*], header&1&[*0*], content&1&*1*, "", []string{})
@@ -305,8 +300,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	content44 := GPTResponse(prePrompt2, question, header4[3])
 	sections[20] = createSection(idArray[20], header4[3], content44, "", []string{})
 
-
-	GPTImage("Parrot on a skateboard performs a trick, cartoon style, natural light, high detail")
 	body.IndentedJSON(http.StatusOK, sections) //reformatts the json to look better and Output
 }
 
