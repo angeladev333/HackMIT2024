@@ -177,7 +177,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 3140,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `emu_teaparty.jpg`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -233,7 +233,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2500,
     },
     data: {
-      imageSource: "emu_teaparty.jpg",
+      imageSource: "ena_loli.png",
       dialogTitle: "EMU CUTIE",
       dialogContents: "she is so cute omggomgomogomg oomgomgmomgomgg",
       externalSources: [],
