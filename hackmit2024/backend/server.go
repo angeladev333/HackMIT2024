@@ -14,6 +14,11 @@ import (
 	openai "github.com/sashabaranov/go-openai"
 
 	"encoding/json" //convert stringJSOn to json
+
+	"encoding/base64"
+	"image/png"
+	"os"
+	"bytes"
 )
 
 type Section struct {
@@ -38,7 +43,7 @@ func GPTResponse(prePrompt string, question string, content string) string {
 	// Concatenate full prompt
 	fullPrompt := prePrompt + "\n" + question + "\n" + content
 
-	client := openai.NewClient("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")
+	client := openai.NewClient("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")
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
@@ -59,6 +64,97 @@ func GPTResponse(prePrompt string, question string, content string) string {
 
 	return resp.Choices[0].Message.Content // Return response
 }
+
+func GPTImage(input string) string {
+
+	c := openai.NewClient("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")
+	ctx := context.Background()
+
+	// Example image as base64
+	reqBase64 := openai.ImageRequest{
+		Prompt:         input,
+		Size:           openai.CreateImageSize256x256,
+		ResponseFormat: openai.CreateImageResponseFormatB64JSON,
+		N:              1,
+	}
+
+	respBase64, err := c.CreateImage(ctx, reqBase64)
+	if err != nil {
+		fmt.Printf("Image creation error: %v\n", err)
+	}
+
+	imgBytes, err := base64.StdEncoding.DecodeString(respBase64.Data[0].B64JSON)
+	if err != nil {
+		fmt.Printf("Base64 decode error: %v\n", err)
+	}
+
+	r := bytes.NewReader(imgBytes)
+	imgData, err := png.Decode(r)
+	if err != nil {
+		fmt.Printf("PNG decode error: %v\n", err)
+	}
+
+	//defint the name of the image 
+	name := uuid.New().String() + ".png"
+	file, err := os.Create(name)
+	
+	if err != nil {
+		fmt.Printf("File creation error: %v\n", err)
+	}
+	defer file.Close()
+
+	if err := png.Encode(file, imgData); err != nil {
+		fmt.Printf("PNG encode error: %v\n", err)
+	}
+
+	return name
+}
+
+//second api key
+// func GPTImage2(input string) string {
+
+// 	c := openai.NewClient("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")
+// 	ctx := context.Background()
+
+// 	// Example image as base64
+// 	reqBase64 := openai.ImageRequest{
+// 		Prompt:         input,
+// 		Size:           openai.CreateImageSize256x256,
+// 		ResponseFormat: openai.CreateImageResponseFormatB64JSON,
+// 		N:              1,
+// 	}
+
+// 	respBase64, err := c.CreateImage(ctx, reqBase64)
+// 	if err != nil {
+// 		fmt.Printf("Image creation error: %v\n", err)
+// 	}
+
+// 	imgBytes, err := base64.StdEncoding.DecodeString(respBase64.Data[0].B64JSON)
+// 	if err != nil {
+// 		fmt.Printf("Base64 decode error: %v\n", err)
+// 	}
+
+// 	r := bytes.NewReader(imgBytes)
+// 	imgData, err := png.Decode(r)
+// 	if err != nil {
+// 		fmt.Printf("PNG decode error: %v\n", err)
+// 	}
+
+// 	//defint the name of the image 
+// 	name := uuid.New().String() + ".png"
+// 	file, err := os.Create(name)
+	
+// 	if err != nil {
+// 		fmt.Printf("File creation error: %v\n", err)
+// 	}
+// 	defer file.Close()
+
+// 	if err := png.Encode(file, imgData); err != nil {
+// 		fmt.Printf("PNG encode error: %v\n", err)
+// 	}
+
+// 	return name
+// }
 
 func stringjsonToArray(stringJSON string) [4]string {
 	// Create a map to hold the parsed JSON
@@ -110,19 +206,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 1
 	content1 := GPTResponse(prePrompt2, question, header[0])
-	sections[1] = createSection(idArray[1], header[0], content1, "", []string{idArray[5], idArray[6], idArray[7], idArray[8]})
+	sections[1] = createSection(idArray[1], header[0], content1, GPTImage(header[0]), []string{idArray[5], idArray[6], idArray[7], idArray[8]})
 
 	//node 2
 	content2 := GPTResponse(prePrompt2, question, header[1])
-	sections[2] = createSection(idArray[2], header[1], content2, "", []string{idArray[9], idArray[10], idArray[11], idArray[12]})
+	sections[2] = createSection(idArray[2], header[1], content2, GPTImage(header[1]), []string{idArray[9], idArray[10], idArray[11], idArray[12]})
 
 	//node 3
 	content3 := GPTResponse(prePrompt2, question, header[2])
-	sections[3] = createSection(idArray[3], header[2], content3, "", []string{idArray[13], idArray[14], idArray[15], idArray[16]})
+	sections[3] = createSection(idArray[3], header[2], content3, GPTImage(header[2]), []string{idArray[13], idArray[14], idArray[15], idArray[16]})
 
 	//node 3
 	content4 := GPTResponse(prePrompt2, question, header[3])
-	sections[4] = createSection(idArray[4], header[3], content4, "", []string{idArray[17], idArray[18], idArray[19], idArray[20]})
+	sections[4] = createSection(idArray[4], header[3], content4, GPTImage(header[3]), []string{idArray[17], idArray[18], idArray[19], idArray[20]})
 
 	//layer 3-------------------------------------------
 	headerString1 := GPTResponse(prePrompt1, header[0], "") //get 4 subsubsection of *subsection 1*
@@ -210,7 +306,7 @@ func responseTree(body *gin.Context) { //the context client calls
 	sections[20] = createSection(idArray[20], header4[3], content44, "", []string{})
 
 
-
+	GPTImage("Parrot on a skateboard performs a trick, cartoon style, natural light, high detail")
 	body.IndentedJSON(http.StatusOK, sections) //reformatts the json to look better and Output
 }
 
