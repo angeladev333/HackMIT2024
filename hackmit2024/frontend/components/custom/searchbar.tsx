@@ -26,7 +26,7 @@ export function SimpleSearchBar() {
 
   return (
     <div>
-      <div>
+      <div className="relative">
         <Command
           className="rounded-lg border-indigo-300 border-2 shadow-sm md:min-w-[450px]"
           style={{ backgroundColor: "#FAFAFA" }}
@@ -60,8 +60,8 @@ export function SimpleSearchBar() {
             className="text-md max-h-24 h-full"
           />
 
-          <CommandList>
-            {isOpen && (
+          {isOpen && (
+            <CommandList>
               <CommandGroup heading="Suggestions">
                 {suggestions.map((suggestion) => (
                   <CommandItem
@@ -74,8 +74,8 @@ export function SimpleSearchBar() {
                   </CommandItem>
                 ))}
               </CommandGroup>
-            )}
-          </CommandList>
+            </CommandList>
+          )}
         </Command>
       </div>
     </div>
