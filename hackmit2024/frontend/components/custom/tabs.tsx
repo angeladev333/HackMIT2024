@@ -22,6 +22,14 @@ export default function NodeTabs() {
                 ? 'bg-[#FFFFFF] text-blue border-blue-500'
                 : 'bg-[#F9F9F9] text-gray-500 hover:bg-[#F9F9F9]'
             }`}
+            style={{
+              textAlign: 'left',  
+              padding: '12 0px',   
+              margin: 0,          
+              borderRadius: 0,  
+              display: 'flex',   
+              alignItems: 'center'  
+            }}
 
               onClick={() => setActiveTab(index)} 
             >

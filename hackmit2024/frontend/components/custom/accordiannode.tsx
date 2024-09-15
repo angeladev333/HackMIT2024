@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Box, Typography } from "@mui/material";
-import React, { Dispatch, ReactNode, SetStateAction } from "react";
+import React, { Dispatch, ReactNode, SetStateAction, useRef } from "react";
 
 export interface AccordionNodeProps {
   title: string;
@@ -16,7 +16,23 @@ export interface AccordionNodeProps {
   children?: ReactNode;
 }
 
-export function AccordionNode(props: AccordionNodeProps) {
+export function AccordionNode(props: AccordionNodeProps) {  
+  
+  const triggerRef = useRef<HTMLDivElement>(null); 
+
+  const handleClick = () => {
+    if (triggerRef.current) {
+
+      const rect = triggerRef.current.getBoundingClientRect();
+      const x = rect.left + window.scrollX;
+      const y = rect.top + window.scrollY; 
+
+      console.log(`Accordion clicked at x: ${x}, y: ${y}`);
+      // Optionally update the position state
+      props.setPosition({ x, y });
+    }
+  };
+
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="item-2">
