@@ -4,164 +4,100 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
     AggregateAccordionData: 
       [
         {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "what is computer science",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Introduction to Computer Science",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Basic Concepts and Terminology",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Programming Languages and Algorithms",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Application and Implications in the Real World",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Algorithm Efficiency",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Fundamental Concepts in Computer Science",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Data Structures",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Programming Languages",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Computer Architecture",
+          position: { x: 0, y: 0 }
+          
         },
         {
-          title: "Bigggggggggg",
+          title: "Programming Languages",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          setPosition: setPosition
         },
         {
-          title: "Bigg",
+          title: "Applications of Computer Science",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          setPosition: setPosition
         },
         {
-          title: "Biggggggggggggggg",
+          title: "Artificial Intelligence",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          setPosition: setPosition
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Data Analysis and Visualization",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          setPosition: setPosition
         },
         {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Computer Networks and Security",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Artificial Intelligence and Machine Learning",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Future Trends in Computer Science",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Artificial Intelligence and Machine Learning",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Quantum Computing",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Cybersecurity and Data Privacy",
+          position: { x: 0, y: 0 }
         },
         {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Internet of Things (IoT) and Edge Computing",
+          position: { x: 0, y: 0 }
         }
       ]
   }
