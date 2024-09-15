@@ -193,6 +193,7 @@ export default function SearchPage() {
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
           <NodeTabs />
+          <FlowPane nodes={MockNodeStructData} edges={MockEdgeStructData} />
         </main>
       </div>
     </div>
