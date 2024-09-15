@@ -5,6 +5,9 @@ import NodeTabs from "@/components/custom/tabs";
 import { AggregateAccordionData } from "../models/bigAccordion";
 import { Position } from "../models/position";
 import { useState } from "react";
+import FlowPane from "../_shared/components/FlowPane";
+import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
+import { MockNodeStructData } from "../_shared/models/MockNodeData";
 
 export default function SearchPage() {
   const [position, setPosition] = useState<Position>({x: 0, y: 0})

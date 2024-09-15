@@ -36,6 +36,6 @@ export default function FlowPane(props: IFlowPaneProps) {
 }
 
 const flowContainerStyle = {
-    height: "600px",
+    height: "100%",
     background: "white"
 }
