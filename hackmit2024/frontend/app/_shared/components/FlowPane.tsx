@@ -1,11 +1,16 @@
-import ReactFlow from "reactflow"
-import { MockNodeStructData } from "../models/MockNodeData"
-import { MockEdgeStructData } from "../models/MockEdgeData"
+import ReactFlow, { Background } from "reactflow"
 import CategoryNode from "./CategoryNode"
 import "reactflow/dist/style.css";
 import { Box } from "@mui/material";
+import { NodeStruct } from "../models/Node";
+import { EdgeStruct } from "../models/Edge";
 
-export default function FlowPane() {
+interface IFlowPaneProps {
+    nodes: NodeStruct[]
+    edges: EdgeStruct[]
+}
+
+export default function FlowPane(props: IFlowPaneProps) {
     const nodeTypes = {
         categoryNode: CategoryNode
     }
@@ -14,21 +19,23 @@ export default function FlowPane() {
     return (
         <Box sx={flowContainerStyle} id="flow-pane">
             <ReactFlow
-                nodes={MockNodeStructData}
-                edges={MockEdgeStructData}
+                nodes={props.nodes}
+                edges={props.edges}
                 nodeTypes={nodeTypes}
                 connectionLineStyle={connectionLineStyle}
                 proOptions={{  hideAttribution: true }}
-                style={flowStyle}
-            />
+            >
+                <Background
+                    gap={16}
+                    size={1}
+                    color="#ddd"
+                />
+            </ReactFlow>
         </Box>
     )
 }
 
 const flowContainerStyle = {
-    height: "600px"
-}
-
-const flowStyle = {
+    height: "600px",
     background: "white"
 }
