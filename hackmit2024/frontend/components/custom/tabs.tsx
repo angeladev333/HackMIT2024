@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function NodeTabs() {
   const numTabs = 2;
   const [activeTab, setActiveTab] = useState(0);
-  const tabValues = Array.from({ length: numTabs }, (_, index) => `tab-${index + 1}`);
-
+  const tabValues = Array.from(
+    { length: numTabs },
+    (_, index) => `tab-${index + 1}`
+  );
 
   return (
     <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '400px' }}> 
@@ -48,13 +50,13 @@ export default function NodeTabs() {
           ))}
         </TabsList>
         </div>
-        {tabValues.map((value, index) => (
+        {/* {tabValues.map((value, index) => (
           <TabsContent key={value} value={value}>
             <div>
               <h1>{`Content for Tab ${index + 1}`}</h1>
             </div>
           </TabsContent>
-        ))}
+        ))} */}
       </Tabs>
     </div>
   );
