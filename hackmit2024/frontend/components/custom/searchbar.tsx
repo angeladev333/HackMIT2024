@@ -54,7 +54,6 @@ export function SimpleSearchBar(props: ISimpleSearchBarProps) {
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                await delay(20000);
                 setIsOpen(false);
                 handleSearch(query);
                 props.setDisplayTab(props.displayTab + 1)
