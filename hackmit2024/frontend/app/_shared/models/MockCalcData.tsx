@@ -5,7 +5,7 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
     AggregateAccordionData: 
       [
         {
-          title: "teach me about calculas",//question
+          title: "Teach Me About Calculus",//question
           position: { x: 0, y: 0 },
         },
         {
@@ -67,6 +67,7 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
         },
         {
           title: "Challenges and Common Mistakes in Integration",
+          position: { x: 0, y: 0 },
         },
         {
           title: "Applications of Calculus",

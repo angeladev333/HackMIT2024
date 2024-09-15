@@ -12,7 +12,6 @@ import React, { Dispatch, ReactNode, SetStateAction, useRef } from "react";
 export interface AccordionNodeProps {
   title: string;
   position: { x: number; y: number };
-  setPosition: Dispatch<SetStateAction<Position>>;
   children?: ReactNode;
 }
 
@@ -29,7 +28,6 @@ export function AccordionNode(props: AccordionNodeProps) {
 
       console.log(`Accordion clicked at x: ${x}, y: ${y}`);
       // Optionally update the position state
-      props.setPosition({ x, y });
     }
   };
 

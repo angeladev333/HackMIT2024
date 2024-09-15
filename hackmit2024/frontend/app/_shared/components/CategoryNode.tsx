@@ -25,7 +25,7 @@ export default function CategoryNode(props: ICategoryNodeProps) {
     >
       <div className="col-span-1 h-44 w-full relative">
         <Image
-          src={getImageSrc(imageSource)}
+          src={imageSource}
           alt="Node containing information"
           layout="fill"
           objectFit="cover"
@@ -62,10 +62,6 @@ export default function CategoryNode(props: ICategoryNodeProps) {
       </div>
     </Box>
   );
-}
-
-function getImageSrc(name: string) {
-  return `/shared/${name}`;
 }
 
 const nodeContainerStyle = {

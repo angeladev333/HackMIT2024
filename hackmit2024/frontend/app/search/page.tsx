@@ -15,12 +15,16 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { biologyAccordionData } from "../_shared/models/MockBiologyData";
 import { computerAccordionData } from "../_shared/models/MockComputerData";
 import { calcAccordionData } from "../_shared/models/MockCalcData";
+import { BioNodes } from "../_shared/models/MockBiologyNodes";
+import { ComputerNodes } from "../_shared/models/MockComputerNodes";
+import { CalcNodes } from "../_shared/models/MockCalcNodes";
 
 export default function SearchPage() {
   const [rawData, setRawData] = useState(null);
   const searchTerm = "teach me about computer science";
   const [activeTab, setActiveTab] = useState(0);
   const accordionData = [biologyAccordionData, computerAccordionData, calcAccordionData]
+  const nodeData = [BioNodes, ComputerNodes, CalcNodes]
 
   useEffect(() => {
     if (false) {
@@ -53,22 +57,14 @@ export default function SearchPage() {
             Your explorations
           </h2>
           <div className="p-4">
-            <BigAccordion data={} />
+            <BigAccordion data={accordionData[activeTab]} />
           </div>
         </aside>
 
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
           <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-          {loading ? (
-            // Show a spinner while data is loading
-            <div className="flex justify-center items-center h-full">
-              <CircularProgress />
-            </div>
-          ) : (
-            // Show the content once the data is fetched
-            <FlowPane nodes={MockNodeStructData} edges={MockEdgeStructData} />
-          )}
+          <FlowPane nodes={nodeData[activeTab]} edges={MockEdgeStructData} />
         </main>
       </div>
     </div>

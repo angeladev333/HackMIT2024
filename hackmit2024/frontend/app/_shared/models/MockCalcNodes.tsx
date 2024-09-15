@@ -1,6 +1,6 @@
 import { NodeStruct } from "./Node";
 
-export const MockCalcNodes: NodeStruct[] = [
+export const CalcNodes: NodeStruct[] = [
   {
     id: "1",
     type: "categoryNode",
@@ -10,7 +10,7 @@ export const MockCalcNodes: NodeStruct[] = [
     },
     data: {
       imageSource: "/calculas/0.png",
-      dialogTitle: "teach me about calculas",
+      dialogTitle: "Teach me about calculus",
       dialogContents: "Calculus is a branch of mathematics that deals with rates of change and accumulation. It is divided into two main branches: differential calculus, which focuses on the study of rates of change and slopes of graphs, and integral calculus, which relates to the accumulation of quantities and the calculation of areas under curves. By understanding calculus, we can solve various real-world problems in physics, engineering, economics, and other fields by analyzing and predicting how quantities change and accumulate over time. Calculus is a fundamental tool for gaining deeper insight into the workings of the natural world.",
       externalSources: ["https://en.wikipedia.org/wiki/Calculus"],
     },
@@ -23,7 +23,7 @@ export const MockCalcNodes: NodeStruct[] = [
       y: 380,
     },
     data: {
-      imageSource: "./calculas/1.png",
+      imageSource: "/calculas/1.png",
       dialogTitle: "Introduction to Calculus",
       dialogContents: "Calculus is a branch of mathematics that deals with the study of rates of change and accumulation. It is divided into two main branches: differential calculus, which involves the study of instantaneous rates of change, and integral calculus, which deals with the accumulation of quantities over a period of time. Calculus is essential in various fields such as physics, engineering, economics, and computer science, as it provides a precise way to analyze and model complex systems. By understanding calculus, one can solve a wide range of problems and make more accurate predictions in real-world scenarios.",
       externalSources: ["https://en.wikipedia.org/wiki/Introduction_to_Calculus"],
@@ -289,7 +289,7 @@ export const MockCalcNodes: NodeStruct[] = [
       y: 3400,
     },
     data: {
-      imageSource: `/calculas/20.png`,
+      imageSource: `/bio/1.png`,
       dialogTitle: "Biology",
       dialogContents: "Calculus is not directly related to the field of biology, but it can still be useful in analyzing biological processes. Calculus can be used to study rates of change, such as the growth of populations or the change in concentration of a substance in a biological system. By understanding calculus, biologists can make more accurate predictions and models of biological phenomena, leading to a deeper understanding of how living organisms function and interact with their environment.",
       externalSources: ["https://en.wikipedia.org/wiki/Applications_of_calculus"],

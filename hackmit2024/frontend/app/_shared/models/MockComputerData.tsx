@@ -4,7 +4,7 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
     AggregateAccordionData: 
       [
         {
-          title: "what is computer science",
+          title: "What is Computer Science",
           position: { x: 0, y: 0 }
         },
         {
@@ -54,22 +54,18 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
         {
           title: "Programming Languages",
           position: { x: 0, y: 0 },
-          setPosition: setPosition
         },
         {
           title: "Applications of Computer Science",
           position: { x: 0, y: 0 },
-          setPosition: setPosition
         },
         {
           title: "Artificial Intelligence",
           position: { x: 0, y: 0 },
-          setPosition: setPosition
         },
         {
           title: "Data Analysis and Visualization",
           position: { x: 0, y: 0 },
-          setPosition: setPosition
         },
         {
           title: "Computer Networks and Security",

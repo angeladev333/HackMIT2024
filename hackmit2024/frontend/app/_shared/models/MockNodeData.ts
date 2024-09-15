@@ -9,7 +9,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 800,
     },
     data: {
-      imageSource: "Azusawa_Kohane_Cards.png",
+      imageSource: "/shared/Azusawa_Kohane_Cards.png",
       dialogTitle: "Kohane cutie",
       dialogContents: "she is so cute omggomgo mogomgoomgo mgmomgomgg",
       externalSources: [],
@@ -23,7 +23,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 380,
     },
     data: {
-      imageSource: "emu_teaparty.jpg",
+      imageSource: "/shared/emu_teaparty.jpg",
       dialogTitle: "EMU CUTIE",
       dialogContents: "she is so cute omggomgomogomg oomgomgmomgomgg",
       externalSources: [],
@@ -37,7 +37,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 300,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -51,7 +51,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 100,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -65,7 +65,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 500,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -79,7 +79,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 700,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -93,7 +93,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1300,
     },
     data: {
-      imageSource: "emu_teaparty.jpg",
+      imageSource: "/shared/emu_teaparty.jpg",
       dialogTitle: "EMU CUTIE",
       dialogContents: "she is so cute omggomgomogomg oomgomgmomgomgg",
       externalSources: [],
@@ -107,7 +107,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1000,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -121,7 +121,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1200,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -135,7 +135,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1400,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -149,7 +149,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1600,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -163,7 +163,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2220,
     },
     data: {
-      imageSource: "emu_teaparty.jpg",
+      imageSource: "/shared/emu_teaparty.jpg",
       dialogTitle: "EMU CUTIE",
       dialogContents: "she is so cute omggomgomogomg oomgomgmomgomgg",
       externalSources: [],
@@ -177,7 +177,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 3140,
     },
     data: {
-      imageSource: `emu_teaparty.jpg`,
+      imageSource: `/shared/emu_teaparty.jpg`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -191,7 +191,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 1900,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -205,7 +205,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2100,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -219,7 +219,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2300,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -233,7 +233,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2500,
     },
     data: {
-      imageSource: "ena_loli.png",
+      imageSource: "/shared/ena_loli.png",
       dialogTitle: "EMU CUTIE",
       dialogContents: "she is so cute omggomgomogomg oomgomgmomgomgg",
       externalSources: [],
@@ -247,7 +247,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 2800,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -261,7 +261,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 3000,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],
@@ -275,7 +275,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 3200,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAA 1",
       dialogContents: "she is so cute omggomg   omogomgoo mgomgmomgomgg",
       externalSources: [],
@@ -289,7 +289,7 @@ export const MockNodeStructData: NodeStruct[] = [
       y: 3400,
     },
     data: {
-      imageSource: `ena_loli.png`,
+      imageSource: `/shared/ena_loli.png`,
       dialogTitle: "ENAAAAAA SHINOMEEEE",
       dialogContents: "she is so cute omggomgomo gomgoomgom gmomgomgg",
       externalSources: [],

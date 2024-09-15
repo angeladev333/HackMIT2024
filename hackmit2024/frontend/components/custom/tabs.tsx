@@ -16,7 +16,7 @@ export default function NodeTabs(props: INodeTabsProps) {
   );
 
   return (
-    <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '400px' }}> 
+    <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '0px' }}> 
       <Tabs defaultValue={tabValues[activeTab]} className="w-full" style={{ padding: 0, margin: 0 }}>
         <div
           className='w-full max-w-full rounded-none'
