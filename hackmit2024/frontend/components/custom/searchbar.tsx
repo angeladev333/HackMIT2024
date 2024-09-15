@@ -49,7 +49,12 @@ export function SimpleSearchBar() {
             onValueChange={(value) => {
               setQuery(value);
               setIsOpen(true);
-              handleSearch(value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setIsOpen(false);
+                handleSearch(query);
+              }
             }}
             onFocus={() => setIsOpen(true)}
             className="text-md max-h-24 h-full"
