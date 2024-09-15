@@ -90,3 +90,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.transition-transform {
+  transition: transform 0.2s ease;
+}

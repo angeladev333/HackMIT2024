@@ -31,25 +31,27 @@ export default function CategoryNode(props: ICategoryNodeProps) {
           objectFit="cover"
         />
       </div>
-      <div className="col-span-2">
-        <Typography sx={{ ...textStyle, fontWeight: 700 }} className="top-0">
+      <div className="col-span-2 ml-4">
+        <Typography sx={{ ...textStyle, fontSize:"24px", fontWeight: 700 }} className="top-0">
           {dialogTitle}
         </Typography>
         <Typography
           sx={{
             ...textStyle,
+            fontSize: "16px", 
             display: "-webkit-box",
             overflow: "hidden",
             WebkitBoxOrient: "vertical",
             WebkitLineClamp: 3,
             textOverflow: "ellipsis",
-            lineHeight: "1.5em",
+            lineHeight: "1.2em",
             maxHeight: "4.5em",
             maxWidth: "300px",
           }}
         >
           {dialogContents}
         </Typography>
+
         <WebsiteDialog
           data={props.data}
           isOpen={isOpen}
@@ -67,9 +69,10 @@ function getImageSrc(name: string) {
 }
 
 const nodeContainerStyle = {
-  padding: "8px",
+  height: "80px",  
+  padding: "24px",
   display: "flex",
-  alignItems: "center",
+  alignItems: "flex-start",  
   flexDirection: "column",
   border: `1px solid ${borderColour}`,
 };

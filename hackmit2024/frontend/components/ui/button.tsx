@@ -19,6 +19,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        tab: "border-radius: 0; margin: 0; padding: 0; align-items: flex-start; margin-left: 4px; margin-right: 4px;" // Apply no border radius, margin, or padding, align items left
       },
       size: {
         default: "h-9 px-4 py-2",

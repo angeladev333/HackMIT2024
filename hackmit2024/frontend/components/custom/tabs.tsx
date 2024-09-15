@@ -1,28 +1,56 @@
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function NodeTabs() {
   const numTabs = 2;
+  const [activeTab, setActiveTab] = useState(0);
+  const tabValues = Array.from(
+    { length: numTabs },
+    (_, index) => `tab-${index + 1}`
+  );
+
   return (
-    <div className="w-full max-w-full">
-      <Tabs defaultValue="tab-1 " className={`grid grid-cols-${numTabs}`}>
-        <TabsList>
-          <TabsTrigger value="tab-1" className="w-full col-span-1">
-            Tab 1
-          </TabsTrigger>
-          <TabsTrigger value="tab-2" className="w-full col-span-1">
-            Tab 2
-          </TabsTrigger>
-        </TabsList>
-        {/* <TabsContent value="tab-1">
-          <div>
-            <h1>Hello</h1>
-          </div>
-        </TabsContent>
-        <TabsContent value="tab-2">
-          <div>
-            <h1>Bonjour</h1>
-          </div>
-        </TabsContent> */}
+    <div className={`w-full max-w-full `}>
+      <Tabs
+        defaultValue={tabValues[activeTab]}
+        className={`w-full `}
+        style={{ padding: 0, margin: 0 }}
+      >
+        <div
+          className={`w-full max-w-full rounded-none grid grid-cols-${numTabs}`}
+          style={{ backgroundColor: "#FAFAFA" }}
+        >
+          <TabsList
+            style={{
+              backgroundColor: "#FAFAFA",
+              justifyContent: "flex-start",
+              padding: 0,
+              margin: 0,
+            }}
+          >
+            {tabValues.map((value, index) => (
+              <TabsTrigger
+                key={value}
+                value={value}
+                className={`w-36 rounded-none border-b-2 border-transparent w-full col-span-1 focus:outline-none ${
+                  activeTab === index
+                    ? "bg-[#FFFFFF] text-blue border-blue-500"
+                    : "bg-[#F9F9F9] text-gray-500 hover:bg-[#F9F9F9]"
+                }`}
+                onClick={() => setActiveTab(index)}
+              >
+                {`Tab ${index + 1}`}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
+        {/* {tabValues.map((value, index) => (
+          <TabsContent key={value} value={value}>
+            <div>
+              <h1>{`Content for Tab ${index + 1}`}</h1>
+            </div>
+          </TabsContent>
+        ))} */}
       </Tabs>
     </div>
   );

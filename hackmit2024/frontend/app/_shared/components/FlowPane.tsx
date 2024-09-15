@@ -24,6 +24,7 @@ export default function FlowPane(props: IFlowPaneProps) {
         nodeTypes={nodeTypes}
         connectionLineStyle={connectionLineStyle}
         proOptions={{ hideAttribution: true }}
+        defaultViewport={{x:0, y:0, zoom:0.5}}
       >
         <Background gap={16} size={1} color="#ddd" />
       </ReactFlow>

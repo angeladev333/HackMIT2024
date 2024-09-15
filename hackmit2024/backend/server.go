@@ -15,10 +15,10 @@ import (
 
 	"encoding/json" //convert stringJSOn to json
 
+	"bytes"
 	"encoding/base64"
 	"image/png"
 	"os"
-	"bytes"
 )
 
 type Section struct {
@@ -96,10 +96,10 @@ func GPTImage(input string) string {
 		fmt.Printf("PNG decode error: %v\n", err)
 	}
 
-	//defint the name of the image 
+	//defint the name of the image
 	name := uuid.New().String() + ".png"
 	file, err := os.Create(name)
-	
+
 	if err != nil {
 		fmt.Printf("File creation error: %v\n", err)
 	}
@@ -142,10 +142,10 @@ func GPTImage(input string) string {
 // 		fmt.Printf("PNG decode error: %v\n", err)
 // 	}
 
-// 	//defint the name of the image 
+// 	//defint the name of the image
 // 	name := uuid.New().String() + ".png"
 // 	file, err := os.Create(name)
-	
+
 // 	if err != nil {
 // 		fmt.Printf("File creation error: %v\n", err)
 // 	}
@@ -311,6 +311,7 @@ func responseTree(body *gin.Context) { //the context client calls
 	content34 := GPTResponse(prePrompt2, question, header3[3])
 	sections[16] = createSection(idArray[16], header3[3], content34, "", GPTsource(header[0]), []string{})
 
+	sections[16] = createSection(idArray[16], header3[3], content34, "", []string{})
 
 	//content&1&*1* := GPTResponse(prePrompt2, question, header&1&[*0*])
 	//sections[*5*] = createSection(idArray[*5*], header&1&[*0*], content&1&*1*, "", []string{})
