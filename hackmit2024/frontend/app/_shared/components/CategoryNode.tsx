@@ -3,39 +3,77 @@ import { NodeData } from "../models/Node";
 import Image from "next/image";
 import { borderColour, textBlack } from "../../_shared/styles/colors";
 import { Handle, Position } from "reactflow";
+import WebsiteDialog from "@/components/custom/websitedialog";
+import { useState } from "react";
 
-interface ICategoryNodeProps {
-    data: NodeData
+export interface ICategoryNodeProps {
+  data: NodeData;
 }
 
 export default function CategoryNode(props: ICategoryNodeProps) {
-    const { imageSource, nodeLabel, dialogTitle } = props.data
+  const { imageSource, dialogContents, dialogTitle } = props.data;
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <Box sx={nodeContainerStyle}>
-            <Image src={getImageSrc(imageSource)} alt={nodeLabel} height="64" width="64" />
-            <Typography sx={textStyle}>
-                {dialogTitle}
-            </Typography>
-            { /* Future dialog goes here */ }
-            <Handle type="target" position={Position.Left} />
-            <Handle type="source" position={Position.Right} />
-        </Box>
-    )
+  return (
+    <Box
+      sx={nodeContainerStyle}
+      onClick={() => {
+        setIsOpen(true && !isOpen);
+        console.log("clicked, isOpen:", isOpen);
+      }}
+      className="grid grid-cols-3 gap-2 bg-white rounded-lg h-full border-2"
+    >
+      <div className="col-span-1 h-44 w-full relative">
+        <Image
+          src={getImageSrc(imageSource)}
+          alt="Node containing information"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="col-span-2">
+        <Typography sx={{ ...textStyle, fontWeight: 700 }} className="top-0">
+          {dialogTitle}
+        </Typography>
+        <Typography
+          sx={{
+            ...textStyle,
+            display: "-webkit-box",
+            overflow: "hidden",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 3,
+            textOverflow: "ellipsis",
+            lineHeight: "1.5em",
+            maxHeight: "4.5em",
+            maxWidth: "300px",
+          }}
+        >
+          {dialogContents}
+        </Typography>
+        <WebsiteDialog
+          data={props.data}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <Handle type="target" position={Position.Left} />
+        <Handle type="source" position={Position.Right} />
+      </div>
+    </Box>
+  );
 }
 
 function getImageSrc(name: string) {
-    return `/shared/temp-images/${name}`
+  return `/shared/${name}`;
 }
 
 const nodeContainerStyle = {
-    padding: "8px",
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    border: `1px solid ${borderColour}`
-}
+  padding: "8px",
+  display: "flex",
+  alignItems: "center",
+  flexDirection: "column",
+  border: `1px solid ${borderColour}`,
+};
 
 const textStyle = {
-    color: textBlack
-}
+  color: textBlack,
+};

@@ -1,29 +1,184 @@
 "use client";
 
-import { useState } from "react";
-import {
-  AccordionNode,
-  AccordionNodeProps,
-} from "@/components/custom/accordiannode";
+import BigAccordion from "@/components/custom/BigAccordion";
 import NodeTabs from "@/components/custom/tabs";
-import WebsiteDialog from "@/components/custom/websitedialog";
+import { AggregateAccordionData } from "../models/bigAccordion";
+import { Position } from "../models/position";
+import { useState } from "react";
+import FlowPane from "../_shared/components/FlowPane";
+import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
+import { MockNodeStructData } from "../_shared/models/MockNodeData";
 
 export default function SearchPage() {
-  // CONSTANTS ==============================================
-  const explorations: AccordionNodeProps[] = [
-    {
-      title: "Exploration 1",
-      children: {
-        title: "Exploration 1",
-        children: <p>Content for exploration 1</p>,
-      },
-    },
-    { title: "Exploration 2", children: <p>Content for exploration 2</p> },
-    { title: "Exploration 3", children: <p>Content for exploration 3</p> },
-  ];
-
+  const [position, setPosition] = useState<Position>({x: 0, y: 0})
   // ==================================================
 
+  let bigAccordionDummyData: AggregateAccordionData = {
+    AggregateAccordionData: 
+      [
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Biggggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigggggggggg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        },
+        {
+          title: "Bigg",
+          position: { x: 0, y: 0 },
+          setPosition: setPosition,
+        }
+      ]
+  }
+  
   return (
     <div className="h-screen flex flex-col">
       {/* Main content */}
@@ -34,18 +189,14 @@ export default function SearchPage() {
             Your explorations
           </h2>
           <div className="p-4">
-            <AccordionNode title={"Capy"}>
-              <AccordionNode title={"Capy2"}>
-                <AccordionNode title={"capy3"} />
-              </AccordionNode>
-            </AccordionNode>
-            <AccordionNode title="Capy4" />
+            <BigAccordion data={bigAccordionDummyData} />
           </div>
         </aside>
 
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
           <NodeTabs />
+          <FlowPane nodes={MockNodeStructData} edges={MockEdgeStructData} />
         </main>
       </div>
     </div>
