@@ -8,7 +8,7 @@ export default function NodeTabs() {
 
 
   return (
-    <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '400px' }}> {/* Define a height for scrolling */}
+    <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '400px' }}> 
       <Tabs defaultValue={tabValues[activeTab]} className="w-full" style={{ padding: 0, margin: 0 }}>
         <div
           className='w-full max-w-full rounded-none'
@@ -19,7 +19,7 @@ export default function NodeTabs() {
         <TabsList style={{ backgroundColor: '#FAFAFA',  justifyContent: 'flex-start', position: 'sticky', 
             top: 0,            
               zIndex: 10,    
-              padding: '',   // Optional: adjust padding as needed
+              padding: '',   
               margin: '0', } }>
           
           {tabValues.map((value, index) => (
@@ -29,7 +29,7 @@ export default function NodeTabs() {
               className={`w-36 rounded-none border-b-2 border-transparent focus:outline-none ${
                 activeTab === index
                 ? 'bg-[#FFFFFF] text-blue border-blue-500'
-                : 'bg-[#F9F9F9] text-gray-500 hover:bg-[#F9F9F9]'
+                : 'bg-[#F9F9F9] text-gray-500 hover:bg-[#FFFFFF]'
             }`}
             style={{
               textAlign: 'left',  
@@ -37,7 +37,8 @@ export default function NodeTabs() {
               margin: 0,          
               borderRadius: 0,  
               display: 'flex',   
-              alignItems: 'center'  
+              alignItems: 'center' ,
+              backgroundColor: activeTab === index ? '#FFFFFF' : '#F3F3F3' 
             }}
 
               onClick={() => setActiveTab(index)} 
