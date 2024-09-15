@@ -26,7 +26,18 @@ export function SimpleSearchBar() {
 
   return (
     <div>
-      <Command className="rounded-lg border shadow-md md:min-w-[450px]">
+      <div>
+      <Command className="rounded-lg border-grey shadow-sm md:min-w-[450px]"
+      style={{ backgroundColor: '#FAFAFA' }}
+      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F3F3F3'} // Darker color on hover
+      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FAFAFA'} // Reset color
+      onClick={(e) => e.currentTarget.style.backgroundColor = '#FAFAFA'} // Reset color
+ 
+> 
+  
+         
+      
+        
         <CommandInput
           placeholder="What do you want to explore today?"
           value={query}
@@ -36,8 +47,10 @@ export function SimpleSearchBar() {
             handleSearch(value);
           }}
           onFocus={() => setIsOpen(true)}
-          className="text-lg max-h-24 h-full"
+          className="text-md max-h-24 h-full"
+          
         />
+        
         <CommandList>
           {isOpen && (
             <CommandGroup heading="Suggestions">
@@ -55,6 +68,7 @@ export function SimpleSearchBar() {
           )}
         </CommandList>
       </Command>
+    </div>
     </div>
   );
 }
