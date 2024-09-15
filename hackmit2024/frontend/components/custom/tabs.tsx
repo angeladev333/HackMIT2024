@@ -24,7 +24,7 @@ export default function NodeTabs() {
             }`}
             style={{
               textAlign: 'left',  
-              padding: '12 0px',   
+              padding: '12 px',   
               margin: 0,          
               borderRadius: 0,  
               display: 'flex',   

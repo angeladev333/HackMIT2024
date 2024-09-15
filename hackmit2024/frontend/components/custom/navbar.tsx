@@ -15,7 +15,6 @@ export default function INavbar() {
           <h1 className="pl-4 text-xl font-bold pt-6">Your App</h1>
         </Link>
 
-        {/* Search bar */}
         <div className="col-span-3 pr-max pt-4 pb-4 pr-4">
           <SimpleSearchBar />
         </div>
