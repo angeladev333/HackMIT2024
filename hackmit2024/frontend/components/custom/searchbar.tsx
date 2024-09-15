@@ -28,10 +28,10 @@ export function SimpleSearchBar() {
     <div>
       <div>
         <Command
-          className="rounded-lg border-grey shadow-sm md:min-w-[450px]"
+          className="rounded-lg border-indigo-300 border-2 shadow-sm md:min-w-[450px]"
           style={{ backgroundColor: "#FAFAFA" }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#F3F3F3";
+            e.currentTarget.style.backgroundColor = "#F5F5F5";
             setIsOpen(true);
           }} // Darker color on hover
           onMouseLeave={(e) => {

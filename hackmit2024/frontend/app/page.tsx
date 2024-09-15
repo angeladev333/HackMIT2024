@@ -15,7 +15,7 @@ export default function Home() {
             <FlipWords words={words} /> <br />
             through web diving
           </div>
-          <div className="text-gray-300 font-semibold text-3xl text-center p-6">
+          <div className="text-gray-500  text-2xl text-center p-6">
             The better Wikipedia search engine
           </div>
 
@@ -23,8 +23,7 @@ export default function Home() {
             <Link
               href="/search"
               className="inline-block px-8 py-6 text-white text-xl font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 bg-[length:200%_200%] bg-[position:0%_50%] hover:bg-[position:100%_50%] focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 transition-all duration-500 ease-in-out"
-              >
-
+            >
               Go to Playground
             </Link>
           </div>
