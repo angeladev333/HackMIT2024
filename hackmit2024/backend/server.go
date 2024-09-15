@@ -4,6 +4,7 @@ import (
 	//general
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid" //unique key
 
@@ -149,7 +150,7 @@ func GPTImage(input string) string {
 // 	return name
 // }
 
-func GPTsource (input string) string {
+func GPTsource(input string) string {
 	// Concatenate full prompt
 	prePrompt := "You are a model that only provide link in \"https://....\" formate and nothing else. Give link about"
 	fullPrompt := prePrompt + input
@@ -226,19 +227,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 1
 	content1 := GPTResponse(prePrompt2, question, header[0])
-	sections[1] = createSection(idArray[1], header[0], content1, GPTImage(header[0]), GPTsource(header[0]), []string{idArray[5], idArray[6], idArray[7], idArray[8]})
+	sections[1] = createSection(idArray[1], header[0], content1, "", []string{idArray[5], idArray[6], idArray[7], idArray[8]})
 
 	//node 2
 	content2 := GPTResponse(prePrompt2, question, header[1])
-	sections[2] = createSection(idArray[2], header[1], content2, GPTImage(header[1]), GPTsource(header[1]), []string{idArray[9], idArray[10], idArray[11], idArray[12]})
+	sections[2] = createSection(idArray[2], header[1], content2, "", []string{idArray[9], idArray[10], idArray[11], idArray[12]})
 
 	//node 3
 	content3 := GPTResponse(prePrompt2, question, header[2])
-	sections[3] = createSection(idArray[3], header[2], content3, GPTImage(header[2]), GPTsource(header[2]), []string{idArray[13], idArray[14], idArray[15], idArray[16]})
+	sections[3] = createSection(idArray[3], header[2], content3, "", []string{idArray[13], idArray[14], idArray[15], idArray[16]})
 
 	//node 3
 	content4 := GPTResponse(prePrompt2, question, header[3])
-	sections[4] = createSection(idArray[4], header[3], content4, GPTImage(header[3]), GPTsource(header[3]), []string{idArray[17], idArray[18], idArray[19], idArray[20]})
+	sections[4] = createSection(idArray[4], header[3], content4, "", []string{idArray[17], idArray[18], idArray[19], idArray[20]})
 
 	//layer 3-------------------------------------------
 	headerString1 := GPTResponse(prePrompt1, header[0], "") //get 4 subsubsection of *subsection 1*
@@ -260,8 +261,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	content14 := GPTResponse(prePrompt2, question, header1[3])
 	sections[8] = createSection(idArray[8], header1[3], content14, "", GPTsource(header1[3]), []string{})
 
-
-
 	headerString2 := GPTResponse(prePrompt1, header[1], "") //get 4 subsubsection of *subsection 1*
 	header2 := stringjsonToArray(headerString2)
 
@@ -280,8 +279,6 @@ func responseTree(body *gin.Context) { //the context client calls
 	//node 2.3
 	content24 := GPTResponse(prePrompt2, question, header2[3])
 	sections[12] = createSection(idArray[12], header2[3], content24, "", GPTsource(header2[3]), []string{})
-
-
 
 	headerString3 := GPTResponse(prePrompt1, header[2], "") //get 4 subsubsection of *subsection 3*
 	header3 := stringjsonToArray(headerString3)
@@ -324,15 +321,21 @@ func responseTree(body *gin.Context) { //the context client calls
 	content44 := GPTResponse(prePrompt2, question, header4[3])
 	sections[20] = createSection(idArray[20], header4[3], content44, "", GPTsource(header[3]), []string{})
 
-
 	body.IndentedJSON(http.StatusOK, sections) //reformatts the json to look better and Output
 }
 
 func main() {
+	router := gin.Default() //creates a new router
 	// router := gin.Default()
 	// router.GET("/health", healthHandler.Response)
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3000"}, // Replace with your frontend's origin
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
 
-	router := gin.Default()                     //creates a new router
 	router.GET("/tree/:question", responseTree) //get request for front end to call
 
 	router.Run("localhost:8080") //base link
