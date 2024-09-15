@@ -20,7 +20,6 @@ export default function INavbar() {
           />
         </Link>
 
-        {/* Search bar */}
         <div className="col-span-3 pr-max pt-4 pb-4 pr-4">
           <SimpleSearchBar />
         </div>
