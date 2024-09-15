@@ -1,7 +1,7 @@
 import { AggregateAccordionData } from "@/app/models/bigAccordion";
 
   // Dummy accordion data
-  export const calcData: AggregateAccordionData = {
+  export const calcAccordionData: AggregateAccordionData = {
     AggregateAccordionData: 
       [
         {

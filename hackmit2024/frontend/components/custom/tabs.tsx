@@ -1,9 +1,15 @@
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dispatch, SetStateAction, useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function NodeTabs() {
-  const numTabs = 2;
-  const [activeTab, setActiveTab] = useState(0);
+interface INodeTabsProps {
+  activeTab: number
+  setActiveTab: Dispatch<SetStateAction<number>>
+}
+
+export default function NodeTabs(props: INodeTabsProps) {
+  const numTabs = 3;
+  const activeTab = props.activeTab
+  const setActiveTab = props.setActiveTab
   const tabValues = Array.from(
     { length: numTabs },
     (_, index) => `tab-${index + 1}`
