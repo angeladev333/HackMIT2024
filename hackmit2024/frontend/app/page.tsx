@@ -4,7 +4,7 @@ import { WavyBackground } from "@/components/custom/wavybackground";
 import Link from "next/link";
 
 export default function Home() {
-  const words = [" animals", " capybaras", " books", " universities"];
+  const words = [" animals", " ecosystems", " capybaras", " books", " STEM topics"];
 
   return (
     <div className="w-full h-full">
@@ -13,10 +13,10 @@ export default function Home() {
           <div className="justify-center text-center text-7xl mx-auto font-bold text-slate-700 dark:text-slate-300 p-4">
             Discover new facts about
             <FlipWords words={words} /> <br />
-            through web diving
+            through web surfing
           </div>
           <div className="text-gray-500  text-2xl text-center p-6">
-            The better Wikipedia search engine
+            A modernized graphical visualization of the internet
           </div>
 
           <div className="text-center">
