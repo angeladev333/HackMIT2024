@@ -26,15 +26,17 @@ type Section struct {
 	Header   string   `json:"Header"`
 	Content  string   `json:"Content"`
 	Image    string   `json:"Image"`
+	Source   string   `json:"Source"`
 	Children []string `json:"Children"` // References other uniqueIDs
 }
 
-func createSection(uniqueID string, header string, content string, image string, children []string) Section {
+func createSection(uniqueID string, header string, content string, image string, source string, children []string) Section {
 	return Section{
 		UniqueID: uniqueID,
 		Header:   header,
 		Content:  content,
 		Image:    image,
+		Source:   source,
 		Children: children,
 	}
 }
@@ -156,6 +158,33 @@ func GPTImage(input string) string {
 // 	return name
 // }
 
+func GPTsource (input string) string {
+	// Concatenate full prompt
+	prePrompt := "You are a model that only provide link in \"https://....\" formate and nothing else. Give link about"
+	fullPrompt := prePrompt + input
+
+	client := openai.NewClient("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")
+	resp, err := client.CreateChatCompletion(
+		context.Background(),
+		openai.ChatCompletionRequest{
+			Model: openai.GPT4o, // Correct model name is: GPT4, GPT3Dot5Turbo
+			Messages: []openai.ChatCompletionMessage{
+				{
+					Role:    openai.ChatMessageRoleUser,
+					Content: fullPrompt,
+				},
+			},
+		},
+	)
+
+	if err != nil {
+		fmt.Printf("ChatCompletion error: %v\n", err)
+		return "" // Fix return type
+	}
+
+	return resp.Choices[0].Message.Content // Return response
+}
+
 func stringjsonToArray(stringJSON string) [4]string {
 	// Create a map to hold the parsed JSON
 	var array [4]string
@@ -194,7 +223,7 @@ func responseTree(body *gin.Context) { //the context client calls
 	}
 
 	//layer 1---------------------------------------------
-	sections[0] = createSection(idArray[0], question, "", "", []string{idArray[1], idArray[2], idArray[3], idArray[4]})
+	sections[0] = createSection(idArray[0], question, "", "", "", []string{idArray[1], idArray[2], idArray[3], idArray[4]})
 
 	//layer 2-------------------------------------------
 	//createSection(uniqueID string, header string, content string, image string, children []string)
@@ -206,19 +235,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 1
 	content1 := GPTResponse(prePrompt2, question, header[0])
-	sections[1] = createSection(idArray[1], header[0], content1, GPTImage(header[0]), []string{idArray[5], idArray[6], idArray[7], idArray[8]})
+	sections[1] = createSection(idArray[1], header[0], content1, GPTImage(header[0]), GPTsource(header[0]), []string{idArray[5], idArray[6], idArray[7], idArray[8]})
 
 	//node 2
 	content2 := GPTResponse(prePrompt2, question, header[1])
-	sections[2] = createSection(idArray[2], header[1], content2, GPTImage(header[1]), []string{idArray[9], idArray[10], idArray[11], idArray[12]})
+	sections[2] = createSection(idArray[2], header[1], content2, GPTImage(header[1]), GPTsource(header[0]), []string{idArray[9], idArray[10], idArray[11], idArray[12]})
 
 	//node 3
 	content3 := GPTResponse(prePrompt2, question, header[2])
-	sections[3] = createSection(idArray[3], header[2], content3, GPTImage(header[2]), []string{idArray[13], idArray[14], idArray[15], idArray[16]})
+	sections[3] = createSection(idArray[3], header[2], content3, GPTImage(header[2]), GPTsource(header[0]), []string{idArray[13], idArray[14], idArray[15], idArray[16]})
 
 	//node 3
 	content4 := GPTResponse(prePrompt2, question, header[3])
-	sections[4] = createSection(idArray[4], header[3], content4, GPTImage(header[3]), []string{idArray[17], idArray[18], idArray[19], idArray[20]})
+	sections[4] = createSection(idArray[4], header[3], content4, GPTImage(header[3]), GPTsource(header[0]), []string{idArray[17], idArray[18], idArray[19], idArray[20]})
 
 	//layer 3-------------------------------------------
 	headerString1 := GPTResponse(prePrompt1, header[0], "") //get 4 subsubsection of *subsection 1*
@@ -226,19 +255,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 1.1
 	content11 := GPTResponse(prePrompt2, question, header1[0])
-	sections[5] = createSection(idArray[5], header1[0], content11, "", []string{})
+	sections[5] = createSection(idArray[5], header1[0], content11, "", GPTsource(header[0]), []string{})
 
 	//node 1.2
 	content12 := GPTResponse(prePrompt2, question, header1[1])
-	sections[6] = createSection(idArray[6], header1[1], content12, "", []string{})
+	sections[6] = createSection(idArray[6], header1[1], content12, "", GPTsource(header[0]), []string{})
 
 	//node 1.3
 	content13 := GPTResponse(prePrompt2, question, header1[2])
-	sections[7] = createSection(idArray[7], header1[2], content13, "", []string{})
+	sections[7] = createSection(idArray[7], header1[2], content13, "", GPTsource(header[0]), []string{})
 
 	//node 1.4
 	content14 := GPTResponse(prePrompt2, question, header1[3])
-	sections[8] = createSection(idArray[8], header1[3], content14, "", []string{})
+	sections[8] = createSection(idArray[8], header1[3], content14, "", GPTsource(header[0]), []string{})
 
 
 
@@ -247,19 +276,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 2.1
 	content21 := GPTResponse(prePrompt2, question, header2[0])
-	sections[9] = createSection(idArray[9], header2[0], content21, "", []string{})
+	sections[9] = createSection(idArray[9], header2[0], content21, "", GPTsource(header[0]), []string{})
 
 	//node 2.2
 	content22 := GPTResponse(prePrompt2, question, header2[1])
-	sections[10] = createSection(idArray[10], header2[1], content22, "", []string{})
+	sections[10] = createSection(idArray[10], header2[1], content22, "", GPTsource(header[0]), []string{})
 
 	//node 2.3
 	content23 := GPTResponse(prePrompt2, question, header2[2])
-	sections[11] = createSection(idArray[11], header2[2], content23, "", []string{})
+	sections[11] = createSection(idArray[11], header2[2], content23, "", GPTsource(header[0]), []string{})
 
 	//node 2.3
 	content24 := GPTResponse(prePrompt2, question, header2[3])
-	sections[12] = createSection(idArray[12], header2[3], content24, "", []string{})
+	sections[12] = createSection(idArray[12], header2[3], content24, "", GPTsource(header[0]), []string{})
 
 
 
@@ -268,19 +297,19 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 3.1
 	content31 := GPTResponse(prePrompt2, question, header3[0])
-	sections[13] = createSection(idArray[13], header3[0], content31, "", []string{})
+	sections[13] = createSection(idArray[13], header3[0], content31, "", GPTsource(header[0]), []string{})
 
 	//node 3.2
 	content32 := GPTResponse(prePrompt2, question, header3[1])
-	sections[14] = createSection(idArray[14], header3[1], content32, "", []string{})
+	sections[14] = createSection(idArray[14], header3[1], content32, "", GPTsource(header[0]), []string{})
 
 	//node 3.3
 	content33 := GPTResponse(prePrompt2, question, header3[2])
-	sections[15] = createSection(idArray[15], header3[2], content33, "", []string{})
+	sections[15] = createSection(idArray[15], header3[2], content33, "", GPTsource(header[0]), []string{})
 
 	//node 3.4
 	content34 := GPTResponse(prePrompt2, question, header3[3])
-	sections[16] = createSection(idArray[16], header3[3], content34, "", []string{})
+	sections[16] = createSection(idArray[16], header3[3], content34, "", GPTsource(header[0]), []string{})
 
 
 	//content&1&*1* := GPTResponse(prePrompt2, question, header&1&[*0*])
@@ -291,22 +320,21 @@ func responseTree(body *gin.Context) { //the context client calls
 
 	//node 4.1
 	content41 := GPTResponse(prePrompt2, question, header4[0])
-	sections[17] = createSection(idArray[17], header4[0], content41, "", []string{})
+	sections[17] = createSection(idArray[17], header4[0], content41, "", GPTsource(header[0]), []string{})
 
 	//node 4.2
 	content42 := GPTResponse(prePrompt2, question, header4[1])
-	sections[18] = createSection(idArray[18], header4[1], content42, "", []string{})
+	sections[18] = createSection(idArray[18], header4[1], content42, "", GPTsource(header[0]), []string{})
 
 	//node 4.3
 	content43 := GPTResponse(prePrompt2, question, header4[2])
-	sections[19] = createSection(idArray[19], header4[2], content43, "", []string{})
+	sections[19] = createSection(idArray[19], header4[2], content43, "", GPTsource(header[0]), []string{})
 
 	//node 4.4
 	content44 := GPTResponse(prePrompt2, question, header4[3])
-	sections[20] = createSection(idArray[20], header4[3], content44, "", []string{})
+	sections[20] = createSection(idArray[20], header4[3], content44, "", GPTsource(header[0]), []string{})
 
 
-	GPTImage("Parrot on a skateboard performs a trick, cartoon style, natural light, high detail")
 	body.IndentedJSON(http.StatusOK, sections) //reformatts the json to look better and Output
 }
 
