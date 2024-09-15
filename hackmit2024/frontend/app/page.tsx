@@ -2,6 +2,7 @@ import { FlipWords } from "@/components/custom/flipwords";
 import { WavyBackground } from "@/components/custom/wavybackground";
 import WebsiteDialog from "@/components/custom/websitedialog";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const words = [" animals", " capybaras", " books", " universities"];
@@ -20,14 +21,12 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <a
+            <Link
               href="/search"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-block px-8 py-6 text-white  text-xl font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 transition-all duration-500 ease-in-out delay-150"
             >
               Go to Playground
-            </a>
+            </Link>
           </div>
         </WavyBackground>
       </div>

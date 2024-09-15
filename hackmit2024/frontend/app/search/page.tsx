@@ -6,6 +6,7 @@ import {
   AccordionNodeProps,
 } from "@/components/custom/accordiannode";
 import NodeTabs from "@/components/custom/tabs";
+import WebsiteDialog from "@/components/custom/websitedialog";
 
 export default function SearchPage() {
   // CONSTANTS ==============================================
@@ -26,7 +27,7 @@ export default function SearchPage() {
   return (
     <div className="h-screen flex flex-col">
       {/* Main content */}
-      <div className="grid grid-cols-4 overflow-hidden max-w-7xl max-h-full h-full ">
+      <div className="grid grid-cols-4 overflow-hidden max-h-full h-full ">
         {/* Left sidebar */}
         <aside className="col-span-1 bg-slate-100 overflow-y-auto">
           <h2 className="text-lg font-semibold p-6 bg-cyan-500 text-white mb-4">
