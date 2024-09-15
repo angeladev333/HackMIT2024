@@ -1,14 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Search } from "lucide-react";
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
   CommandInput,
-  CommandEmpty,
 } from "@/components/ui/command";
 
 export function SimpleSearchBar() {
@@ -22,6 +20,7 @@ export function SimpleSearchBar() {
 
   function handleSearch(term: string) {
     console.log(term);
+    
   }
 
   return (
