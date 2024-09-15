@@ -5,6 +5,7 @@ import {
   AccordionNode,
   AccordionNodeProps,
 } from "@/components/custom/accordiannode";
+import NodeTabs from "@/components/custom/tabs";
 
 export default function SearchPage() {
   // CONSTANTS ==============================================
@@ -25,9 +26,9 @@ export default function SearchPage() {
   return (
     <div className="h-screen flex flex-col">
       {/* Main content */}
-      <div className="grid grid-cols-4 overflow-hidden px-12 p-12 gap-4 max-w-7xl ">
+      <div className="grid grid-cols-4 overflow-hidden max-w-7xl max-h-full h-full ">
         {/* Left sidebar */}
-        <aside className="col-span-1 bg-slate-100 rounded-lg shadow-lg overflow-y-auto">
+        <aside className="col-span-1 bg-slate-100 overflow-y-auto">
           <h2 className="text-lg font-semibold p-6 bg-cyan-500 text-white mb-4">
             Your explorations
           </h2>
@@ -42,15 +43,8 @@ export default function SearchPage() {
         </aside>
 
         {/* Main content area */}
-        <main className="col-span-3 flex-1 px-24 p-4 overflow-y-auto max-h-full h-full">
-          <h2 className="text-2xl font-bold mb-4">Welcome to Your App</h2>
-          <p>
-            Start exploring or use the search bar to find what you're looking
-            for.
-          </p>
-          <div className="h-96 w-30 bg-grey-500 text-center">
-            Flow chart here
-          </div>
+        <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
+          <NodeTabs />
         </main>
       </div>
     </div>

@@ -31,6 +31,7 @@ export function SimpleSearchBar() {
             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
+          className="text-lg max-h-24 h-full"
         />
         <CommandList>
           {isOpen && (
