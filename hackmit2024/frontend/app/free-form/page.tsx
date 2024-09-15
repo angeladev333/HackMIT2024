@@ -25,7 +25,7 @@ const initialNodes: Node[] = [
   {
     id: "1",
     type: "input",
-    data: { label: "input node" },
+    data: { label: "Primary Search" },
     position: { x: 250, y: 5 },
   },
 ];
