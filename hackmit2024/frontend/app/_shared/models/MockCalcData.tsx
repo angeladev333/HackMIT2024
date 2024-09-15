@@ -5,164 +5,88 @@ import { AggregateAccordionData } from "@/app/models/bigAccordion";
     AggregateAccordionData: 
       [
         {
-          title: "Biggggggggggggggg",
+          title: "teach me about calculas",//question
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Introduction to Calculus",//medium 1 
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggg",
+          title: "Fundamental concepts in calculus", 
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigg",
+          title: "Differentiation and its applications",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Biggggggggggggggg",
+          title: "Integration and its applications",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Advanced topics in calculus",//4 child
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggg",
+          title: "Differentiation",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigg",
+          title: "Understanding the concept of differentiation",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
+
         },
         {
-          title: "Biggggggggggggggg",
+          title: "The importance of differentiation in various fields",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Strategies for implementing differentiation",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggg",
+          title: "valuating the effectiveness of differentiation techniques",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigg",
+          title: "Integration",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Biggggggggggggggg",
+          title: "Introduction to Integration",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Methods of Integration",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggg",
+          title: "Applications of Integration",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+          title: "Challenges and Common Mistakes in Integration",
         },
         {
-          title: "Biggggggggggggggg",
+          title: "Applications of Calculus",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggggggg",
+          title: "Physics",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigggggggggg",
+          title: "Engineering",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Bigg",
+          title: "Economics",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
         },
         {
-          title: "Biggggggggggggggg",
+          title: "Biology",
           position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
         }
       ]
   }
