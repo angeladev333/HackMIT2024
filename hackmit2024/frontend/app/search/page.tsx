@@ -185,7 +185,7 @@ export default function SearchPage() {
       <div className="grid grid-cols-4 overflow-hidden max-h-full h-full ">
         {/* Left sidebar */}
         <aside className="col-span-1 bg-slate-100 overflow-y-auto">
-          <h2 className="text-lg font-semibold p-6 bg-cyan-500 text-white mb-4">
+          <h2 className="text-lg border-t-2 font-semibold p-6 bg-white text-black mb-4">
             Your explorations
           </h2>
           <div className="p-4">

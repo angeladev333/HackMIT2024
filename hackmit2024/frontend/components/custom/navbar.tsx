@@ -10,8 +10,8 @@ export default function INavbar() {
   return (
     <>
       <div className="h-20 w-full grid grid-cols-4 pl-0 bg-white text-black">
-        <Link href="/" className="w-48 pl-4 flex items-center h-full">
-          <Image
+        <Link href="/" className="w-48 pl-4  h-full">
+          <Image className="w-48 pl-4 scale-150 h-full pt-4"
             src="/logo.png"
             alt="logo"
             width={150}
