@@ -13,7 +13,7 @@ export default function NodeTabs() {
             Tab 2
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="tab-1">
+        {/* <TabsContent value="tab-1">
           <div>
             <h1>Hello</h1>
           </div>
@@ -22,7 +22,7 @@ export default function NodeTabs() {
           <div>
             <h1>Bonjour</h1>
           </div>
-        </TabsContent>
+        </TabsContent> */}
       </Tabs>
     </div>
   );
