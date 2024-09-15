@@ -4,7 +4,7 @@ const strokeWidth = 2;
 
 export const MockEdgeStructData: EdgeStruct[] = [
   {
-    type: "bezier",
+    type: "default",
     source: "1",
     target: "2",
     id: "edge 1",
@@ -12,7 +12,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "2",
     target: "3",
     id: "edge 2",
@@ -20,7 +20,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "2",
     target: "4",
     id: "edge 3",
@@ -28,7 +28,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "2",
     target: "6",
     id: "edge 4",
@@ -36,7 +36,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "2",
     target: "7",
     id: "edge 5",
@@ -44,7 +44,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "1",
     target: "8",
     id: "edge 6",
@@ -52,7 +52,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "8",
     target: "9",
     id: "edge 7",
@@ -60,7 +60,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "8",
     target: "10",
     id: "edge 8",
@@ -68,7 +68,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "8",
     target: "11",
     id: "edge 9",
@@ -76,7 +76,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "8",
     target: "12",
     id: "edge 10",
@@ -84,7 +84,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "1",
     target: "13",
     id: "edge 11",
@@ -92,7 +92,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "1",
     target: "14",
     id: "edge 12",
@@ -100,7 +100,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "13",
     target: "15",
     id: "edge 13",
@@ -108,7 +108,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "13",
     target: "16",
     id: "edge 14",
@@ -116,7 +116,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "13",
     target: "17",
     id: "edge 15",
@@ -124,7 +124,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "13",
     target: "18",
     id: "edge 16",
@@ -132,7 +132,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "14",
     target: "19",
     id: "edge 17",
@@ -140,7 +140,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "14",
     target: "20",
     id: "edge 18",
@@ -148,7 +148,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "14",
     target: "21",
     id: "edge 19",
@@ -156,7 +156,7 @@ export const MockEdgeStructData: EdgeStruct[] = [
     style: { strokeWidth: strokeWidth },
   },
   {
-    type: "bezier",
+    type: "default",
     source: "14",
     target: "22",
     id: "edge 20",
