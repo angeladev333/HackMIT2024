@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function INavbar() {
-  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <>
