@@ -38,7 +38,6 @@ export default function RootLayout({
 
       <body>
         <div className="relative z-50">
-          <INavbar />
         </div>
         {children}
       </body>

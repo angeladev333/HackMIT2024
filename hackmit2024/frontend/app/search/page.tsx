@@ -14,6 +14,8 @@ import { calcAccordionData } from "../_shared/models/MockCalcData";
 import { BioNodes } from "../_shared/models/MockBiologyNodes";
 import { ComputerNodes } from "../_shared/models/MockComputerNodes";
 import { CalcNodes } from "../_shared/models/MockCalcNodes";
+import INavbar from "@/components/custom/navbar";
+import { emptyNodes } from "../_shared/models/EmptyNodes";
 
 export default function SearchPage() {
   const [rawData, setRawData] = useState(null);
@@ -22,6 +24,7 @@ export default function SearchPage() {
   const accordionData = [biologyAccordionData, computerAccordionData, calcAccordionData]
   const nodeData = [BioNodes, ComputerNodes, CalcNodes]
   const tabNames = ["Biology", "Computer", "Calculus"]
+  const [displayTabs, setDisplayTabs] = useState(0);
 
   useEffect(() => {
     if (false) {
@@ -46,6 +49,7 @@ export default function SearchPage() {
   
   return (
     <div className="h-screen flex flex-col">
+      <INavbar displayTab={displayTabs} setDisplayTab={setDisplayTabs}/>
       {/* Main content */}
       <div className="grid grid-cols-4 overflow-hidden max-h-full h-full">
         {/* Left sidebar */}
@@ -60,8 +64,9 @@ export default function SearchPage() {
 
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
-          <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} tabNames={tabNames}/>
-          <FlowPane nodes={nodeData[activeTab]} edges={MockEdgeStructData} />
+          <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} tabNames={tabNames} displayTabs={displayTabs}/>
+          {displayTabs > 0 && <FlowPane nodes={nodeData[activeTab]} edges={MockEdgeStructData} />}
+          {displayTabs == 0 && <div style={{background: "white", width: "100%", height: "100%"}}/>}
         </main>
       </div>
     </div>

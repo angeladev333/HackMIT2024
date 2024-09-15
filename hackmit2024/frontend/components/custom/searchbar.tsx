@@ -8,14 +8,17 @@ import {
   CommandList,
   CommandInput,
 } from "@/components/ui/command";
+import { Dispatch } from "react";
 
-export function SimpleSearchBar() {
+interface ISimpleSearchBarProps {
+  displayTab: number
+  setDisplayTab: Dispatch<React.SetStateAction<number>>
+}
+
+export function SimpleSearchBar(props: ISimpleSearchBarProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
   const suggestions = [
-    "Tell me about the origin of cryptography",
-    "Is a capybara a fish?",
-    "I want to learn math",
   ];
 
   function handleSearch(term: string) {
@@ -51,8 +54,10 @@ export function SimpleSearchBar() {
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
+                await delay(20000);
                 setIsOpen(false);
                 handleSearch(query);
+                props.setDisplayTab(props.displayTab + 1)
               }
             }}
             onFocus={() => setIsOpen(true)}
@@ -61,18 +66,6 @@ export function SimpleSearchBar() {
 
           {isOpen && (
             <CommandList>
-              <CommandGroup heading="Suggestions">
-                {suggestions.map((suggestion) => (
-                  <CommandItem
-                    onSelect={(value) => {
-                      setQuery(value);
-                      setIsOpen(false);
-                    }}
-                  >
-                    <span> {suggestion}</span>
-                  </CommandItem>
-                ))}
-              </CommandGroup>
             </CommandList>
           )}
         </Command>

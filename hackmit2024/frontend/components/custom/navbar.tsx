@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import { SimpleSearchBar } from "./searchbar";
 import Link from "next/link";
 import Image from "next/image";
+import { Dispatch, SetStateAction } from "react";
 
-export default function INavbar() {
+interface INavbarProps {
+  displayTab: number
+  setDisplayTab: Dispatch<SetStateAction<number>>
+}
 
+export default function INavbar(props: INavbarProps) {
   return (
     <>
       <div className="h-20 w-full grid grid-cols-4 pl-0 bg-white text-black">
@@ -21,7 +25,7 @@ export default function INavbar() {
         </Link>
 
         <div className="col-span-3 pr-max pt-4 pb-4 pr-4">
-          <SimpleSearchBar />
+          <SimpleSearchBar displayTab={props.displayTab} setDisplayTab={props.setDisplayTab}/>
         </div>
       </div>
     </>
