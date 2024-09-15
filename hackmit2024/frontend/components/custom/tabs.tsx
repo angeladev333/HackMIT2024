@@ -8,10 +8,19 @@ export default function NodeTabs() {
 
 
   return (
-    <div className="w-full h-full max-w-full" >
-      <Tabs defaultValue={tabValues[activeTab]} className={`w-full`} style={{padding: 0, margin: 0}}  >
-        <div className='w-full max-w-full rounded-none' style={{backgroundColor: '#FAFAFA'}}>
-        <TabsList style={{ backgroundColor: '#FAFAFA',  justifyContent: 'flex-start', padding: 0, margin: 0 } }>
+    <div className="w-full h-full max-w-full" style={{ position: 'relative', height: '400px' }}> {/* Define a height for scrolling */}
+      <Tabs defaultValue={tabValues[activeTab]} className="w-full" style={{ padding: 0, margin: 0 }}>
+        <div
+          className='w-full max-w-full rounded-none'
+          style={{
+            backgroundColor: '#FAFAFA',
+                  
+          }}>
+        <TabsList style={{ backgroundColor: '#FAFAFA',  justifyContent: 'flex-start', position: 'sticky', 
+            top: 0,            
+              zIndex: 10,    
+              padding: '',   // Optional: adjust padding as needed
+              margin: '0', } }>
           
           {tabValues.map((value, index) => (
             <TabsTrigger
