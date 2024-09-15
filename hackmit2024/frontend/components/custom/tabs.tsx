@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 interface INodeTabsProps {
   activeTab: number
   setActiveTab: Dispatch<SetStateAction<number>>
+  tabNames: string[]
 }
 
 export default function NodeTabs(props: INodeTabsProps) {
@@ -51,7 +52,7 @@ export default function NodeTabs(props: INodeTabsProps) {
 
               onClick={() => setActiveTab(index)} 
             >
-              {`Tab ${index + 1}`}
+              {props.tabNames[index]}
             </TabsTrigger>
           ))}
         </TabsList>

@@ -2,16 +2,12 @@
 
 import BigAccordion from "@/components/custom/BigAccordion";
 import NodeTabs from "@/components/custom/tabs";
-import { AggregateAccordionData } from "../models/bigAccordion";
-import { Position } from "../models/position";
 import { SetStateAction, useEffect, useState } from "react";
 import FlowPane from "../_shared/components/FlowPane";
 import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
-import { MockNodeStructData } from "../_shared/models/MockNodeData";
 import { getGenerateURL } from "../_api/endpoints";
 
 // You can import a spinner from Material UI or any other library or use a custom CSS spinner
-import CircularProgress from '@mui/material/CircularProgress'; 
 import { biologyAccordionData } from "../_shared/models/MockBiologyData";
 import { computerAccordionData } from "../_shared/models/MockComputerData";
 import { calcAccordionData } from "../_shared/models/MockCalcData";
@@ -25,6 +21,7 @@ export default function SearchPage() {
   const [activeTab, setActiveTab] = useState(0);
   const accordionData = [biologyAccordionData, computerAccordionData, calcAccordionData]
   const nodeData = [BioNodes, ComputerNodes, CalcNodes]
+  const tabNames = ["Biology", "Computer", "Calculus"]
 
   useEffect(() => {
     if (false) {
@@ -63,7 +60,7 @@ export default function SearchPage() {
 
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
-          <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+          <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} tabNames={tabNames}/>
           <FlowPane nodes={nodeData[activeTab]} edges={MockEdgeStructData} />
         </main>
       </div>

@@ -289,7 +289,7 @@ export const CalcNodes: NodeStruct[] = [
       y: 3400,
     },
     data: {
-      imageSource: `/bio/1.png`,
+      imageSource: `/biology/bio1.png`,
       dialogTitle: "Biology",
       dialogContents: "Calculus is not directly related to the field of biology, but it can still be useful in analyzing biological processes. Calculus can be used to study rates of change, such as the growth of populations or the change in concentration of a substance in a biological system. By understanding calculus, biologists can make more accurate predictions and models of biological phenomena, leading to a deeper understanding of how living organisms function and interact with their environment.",
       externalSources: ["https://en.wikipedia.org/wiki/Applications_of_calculus"],
