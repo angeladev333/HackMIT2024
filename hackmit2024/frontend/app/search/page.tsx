@@ -4,7 +4,7 @@ import BigAccordion from "@/components/custom/BigAccordion";
 import NodeTabs from "@/components/custom/tabs";
 import { AggregateAccordionData } from "../models/bigAccordion";
 import { Position } from "../models/position";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import FlowPane from "../_shared/components/FlowPane";
 import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
 import { MockNodeStructData } from "../_shared/models/MockNodeData";
@@ -12,202 +12,36 @@ import { getGenerateURL } from "../_api/endpoints";
 
 // You can import a spinner from Material UI or any other library or use a custom CSS spinner
 import CircularProgress from '@mui/material/CircularProgress'; 
+import { biologyAccordionData } from "../_shared/models/MockBiologyData";
+import { computerAccordionData } from "../_shared/models/MockComputerData";
+import { calcAccordionData } from "../_shared/models/MockCalcData";
 
 export default function SearchPage() {
   const [rawData, setRawData] = useState(null);
-  const [loading, setLoading] = useState(false); // Loading state
   const searchTerm = "teach me about computer science";
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  const [activeTab, setActiveTab] = useState(0);
+  const accordionData = [biologyAccordionData, computerAccordionData, calcAccordionData]
 
   useEffect(() => {
-    const fetchData = async () => {
-      console.log("fetching")
-      setLoading(true); // Set loading to true when fetching starts
-      try {
-        const generateUrl = new URL(getGenerateURL(searchTerm));
-        const response = await fetch(generateUrl);
-        const result = await response.json();
-        console.log("Result: ", result)
-        setRawData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false); // Set loading to false when fetching ends
-        console.log("Done fetching")
-      }
-    };
-
-    fetchData();
-  }, [searchTerm]);
-
-  console.log(rawData)
-  
-  // Dummy accordion data
-  let bigAccordionDummyData: AggregateAccordionData = {
-    AggregateAccordionData: 
-      [
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Biggggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigggggggggg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
-        },
-        {
-          title: "Bigg",
-          position: { x: 0, y: 0 },
-          setPosition: setPosition,
+    if (false) {
+      const fetchData = async () => {
+        console.log("fetching")
+        try {
+          const generateUrl = new URL(getGenerateURL(searchTerm));
+          const response = await fetch(generateUrl);
+          const result = await response.json();
+          console.log("Result: ", result)
+          setRawData(result);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          console.log("Done fetching")
         }
-      ]
-  }
+      };
+  
+      fetchData();
+    }
+  }, [searchTerm]);
   
   return (
     <div className="h-screen flex flex-col">
@@ -219,14 +53,13 @@ export default function SearchPage() {
             Your explorations
           </h2>
           <div className="p-4">
-            <BigAccordion data={bigAccordionDummyData} />
+            <BigAccordion data={} />
           </div>
         </aside>
 
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
-          <NodeTabs />
-
+          <NodeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
           {loading ? (
             // Show a spinner while data is loading
             <div className="flex justify-center items-center h-full">
