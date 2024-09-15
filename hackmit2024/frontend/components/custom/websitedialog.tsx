@@ -5,16 +5,16 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  DialogTitle
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import { NodeData } from "@/app/_shared/models/Node";
+import { Dispatch, SetStateAction } from "react";
 
 interface IWebsiteDialogProps {
   data: NodeData;
   isOpen: boolean;
-  setIsOpen: any;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function WebsiteDialog(props: IWebsiteDialogProps) {

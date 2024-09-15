@@ -1,9 +1,7 @@
 import { FlipWords } from "@/components/custom/flipwords";
 import { WavyBackground } from "@/components/custom/wavybackground";
-import WebsiteDialog from "@/components/custom/websitedialog";
 
 import Link from "next/link";
-
 
 export default function Home() {
   const words = [" animals", " capybaras", " books", " universities"];
