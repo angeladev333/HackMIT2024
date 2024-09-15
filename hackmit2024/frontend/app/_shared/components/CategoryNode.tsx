@@ -11,14 +11,20 @@ export interface ICategoryNodeProps {
 }
 
 export default function CategoryNode(props: ICategoryNodeProps) {
-  const { imageSource, nodeLabel, dialogTitle } = props.data;
+  const { imageSource, dialogTitle } = props.data;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box sx={nodeContainerStyle} onClick={() => setIsOpen(true)}>
+    <Box
+      sx={nodeContainerStyle}
+      onClick={() => {
+        setIsOpen(true && !isOpen);
+        console.log("clicked, isOpen:", isOpen);
+      }}
+    >
       <Image
         src={getImageSrc(imageSource)}
-        alt={nodeLabel}
+        alt="Node containing information"
         height="64"
         width="64"
       />
