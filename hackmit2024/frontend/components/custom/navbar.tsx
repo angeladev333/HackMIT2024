@@ -9,13 +9,14 @@ export default function INavbar() {
 
   return (
     <>
-      <div className="w-full pl-12 pt-12 grid grid-cols-4 gap-4 bg-slate-800 text-white p-4">
-        <Link href="/" className="w-24 flex items-center">
-          <h1 className="text-xl font-bold">Your App</h1>
+    
+      <div className="h-20 w-full grid grid-cols-4 pl-0 bg-white text-black">
+        <Link href="/" className="w-48 flex items-top">
+          <h1 className="pl-4 text-xl font-bold pt-6">Your App</h1>
         </Link>
 
         {/* Search bar */}
-        <div className="col-span-3 pr-max p-4">
+        <div className="col-span-3 pr-max pt-4 pb-4 pr-4">
           <SimpleSearchBar />
         </div>
       </div>

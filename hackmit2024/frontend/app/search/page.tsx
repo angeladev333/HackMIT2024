@@ -1,27 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import {
-  AccordionNode,
-  AccordionNodeProps,
-} from "@/components/custom/accordiannode";
+import { AccordionNode } from "@/components/custom/accordiannode";
 import NodeTabs from "@/components/custom/tabs";
-import WebsiteDialog from "@/components/custom/websitedialog";
+import FlowPane from "../_shared/components/FlowPane";
+import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
+import { MockNodeStructData } from "../_shared/models/MockNodeData";
 
 export default function SearchPage() {
-  // CONSTANTS ==============================================
-  const explorations: AccordionNodeProps[] = [
-    {
-      title: "Exploration 1",
-      children: {
-        title: "Exploration 1",
-        children: <p>Content for exploration 1</p>,
-      },
-    },
-    { title: "Exploration 2", children: <p>Content for exploration 2</p> },
-    { title: "Exploration 3", children: <p>Content for exploration 3</p> },
-  ];
-
   // ==================================================
 
   return (
@@ -46,6 +31,7 @@ export default function SearchPage() {
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
           <NodeTabs />
+          <FlowPane nodes={MockNodeStructData} edges={MockEdgeStructData} />
         </main>
       </div>
     </div>
