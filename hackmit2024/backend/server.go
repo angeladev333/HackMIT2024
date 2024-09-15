@@ -74,6 +74,7 @@ func GPTImage(input string) string {
 
 	// Example image as base64
 	reqBase64 := openai.ImageRequest{
+		Model: 		openai.dall_e_3,
 		Prompt:         input,
 		Size:           openai.CreateImageSize256x256,
 		ResponseFormat: openai.CreateImageResponseFormatB64JSON,
