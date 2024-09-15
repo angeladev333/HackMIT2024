@@ -1,9 +1,10 @@
 "use client";
 
-import {
-  AccordionNode,
-} from "@/components/custom/accordiannode";
+import { AccordionNode } from "@/components/custom/accordiannode";
 import NodeTabs from "@/components/custom/tabs";
+import FlowPane from "../_shared/components/FlowPane";
+import { MockEdgeStructData } from "../_shared/models/MockEdgeData";
+import { MockNodeStructData } from "../_shared/models/MockNodeData";
 
 export default function SearchPage() {
   // ==================================================
@@ -26,10 +27,11 @@ export default function SearchPage() {
             <AccordionNode title="Capy4" />
           </div>
         </aside>
-        
+
         {/* Main content area */}
         <main className="col-span-3 overflow-y-auto max-w-full w-full max-h-full h-full">
           <NodeTabs />
+          <FlowPane nodes={MockNodeStructData} edges={MockEdgeStructData} />
         </main>
       </div>
     </div>
