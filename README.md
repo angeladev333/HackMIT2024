@@ -1,6 +1,10 @@
 # 🏆 HackMIT Prize: Best Truth-Seeking Agent 🏆
 Sponsored by Paradigm
 
+![Flowpedia Logo](./frontend/public/Flowpedia-logo.png)
+
+![Flowpedia](./frontend/public/Flowpedia.png)
+
 ## Inspiration
 Initially, we were inspired by our studies while learning mathematics and computer science -- the topics were very broad but had many areas of expertise to focus on, so google searches usually ended up being elementary and not applicable to our studies, ultimately taking many many searches in order to really find the insights we wanted to learn. After collecting user research from 30+ university students, we realized that this was not just a problem limited to just us, so we decided to pursue this project and create a tool to address this challenge. As this is problem that students face globally (based on our user research), we decided to target university students in particular that they would be able to do deep dives into their newfound niches without being distracted by the surface level concepts that search engines like Google usually recommends due to their algorithm.
 
@@ -23,4 +27,4 @@ We learned that coding is hard... but it's the friendship made along the way tha
 We want to make a NFT instance for each of the searches, so that profs can get money from sharing their lecture thoughts and even tokenize their slides!
 
 ## Other Links
-Figma design (low, medium, high fidelity and user research)[https://www.figma.com/design/4IEe3Z4dFb46NaviAKL8TK/designs?node-id=40-47383&node-type=canvas&t=3lYNfNc4OG7yvErf-0]
+[Figma design (low, medium, high fidelity and user research)](https://www.figma.com/design/4IEe3Z4dFb46NaviAKL8TK/designs?node-id=40-47383&node-type=canvas&t=3lYNfNc4OG7yvErf-0)
