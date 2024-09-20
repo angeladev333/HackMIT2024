@@ -23,4 +23,4 @@ We learned that coding is hard... but it's the friendship made along the way tha
 We want to make a NFT instance for each of the searches, so that profs can get money from sharing their lecture thoughts and even tokenize their slides!
 
 ## Other Links
-Figma design (low, medium, high fidelity and user research) [https://www.figma.com/design/4IEe3Z4dFb46NaviAKL8TK/designs?node-id=40-47383&node-type=canvas&t=3lYNfNc4OG7yvErf-0]
+Figma design (low, medium, high fidelity and user research)[https://www.figma.com/design/4IEe3Z4dFb46NaviAKL8TK/designs?node-id=40-47383&node-type=canvas&t=3lYNfNc4OG7yvErf-0]
