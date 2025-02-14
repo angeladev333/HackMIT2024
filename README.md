@@ -4,6 +4,8 @@ Sponsored by Paradigm
 ![Flowpedia Logo](./hackmit2024/frontend/public/Flowpedia-logo.png)
 
 ![Flowpedia](./hackmit2024/frontend/public/Flowpedia.png)
+![image](https://github.com/user-attachments/assets/7767fc5c-fd72-4f39-bf67-8323395a3658)
+
 
 ## Inspiration
 Initially, we were inspired by our studies while learning mathematics and computer science -- the topics were very broad but had many areas of expertise to focus on, so google searches usually ended up being elementary and not applicable to our studies, ultimately taking many many searches in order to really find the insights we wanted to learn. After collecting user research from 30+ university students, we realized that this was not just a problem limited to just us, so we decided to pursue this project and create a tool to address this challenge. As this is problem that students face globally (based on our user research), we decided to target university students in particular that they would be able to do deep dives into their newfound niches without being distracted by the surface level concepts that search engines like Google usually recommends due to their algorithm.
